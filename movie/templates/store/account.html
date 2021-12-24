@@ -1,0 +1,48 @@
+{% extends "./base.html" %}
+
+
+{% block title %} Home  {% endblock %}
+
+{% block content %}
+
+<div class="container">
+		<div class="card">
+			<div class="container-fliud">
+				<br>
+				<br>
+				<br>
+				<br>
+				{% for i in product_detail_view %}
+
+				<div class="wrapper row">
+					<div class="preview col-md-6">
+
+						<div class="preview-pic tab-content">
+
+						  <div class="tab-pane active" id="pic-1"> <img style="height : 400px" src="{{i.image.url}}"></div>
+						</div>
+					</div>
+					<div class="details col-md-6">
+						<h3 class="product-title">{{i.name}}</h3>
+						<br>
+						<div class="rating">
+							<span class="review-no">41 reviews</span>
+						</div>
+						<span class="product-title">{{i.detail}}</span>
+						<br>
+				<br>
+						<h4 class="price">current price: <span>₹ {{i.price}}</span></h4>
+						<p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
+
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+{% endblock content %}
